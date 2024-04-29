@@ -21,6 +21,15 @@
     margin-bottom: 5px;
     background-color: #c1bebe;
     border-color: #DDDDDD;
+    font-size:xx-large;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align:right;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0 5px 0 5px;
+
 }
 .row{
     display:flex;
