@@ -29,7 +29,9 @@
     align-items: center;
     justify-content: end;
     padding: 0 5px 0 5px;
-
+    overflow:hidden;
+    white-space:nowrap;
+    
 }
 .row{
     display:flex;
@@ -42,7 +44,7 @@
     flex-grow: 2.65;
     border-radius: 25px;
 }
-button{
+input{
     flex: 1;
     margin: 4px;
     border-radius: 50%;
