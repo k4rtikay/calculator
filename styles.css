@@ -1,6 +1,10 @@
 .container{
-    height:390px;
+    display: flex;
+}
+.calContainer{
+    width: 70%;
     display:flex;
+    float: left;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -21,7 +25,7 @@
     margin-bottom: 5px;
     background-color: #c1bebe;
     border-color: #DDDDDD;
-    font-size:xx-large;
+    font-size:30px;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align:right;
@@ -29,13 +33,12 @@
     align-items: center;
     justify-content: end;
     padding: 0 5px 0 5px;
-    overflow:hidden;
-    white-space:nowrap;
+    overflow:auto;
     
 }
 .row{
     display:flex;
-    width: 205px;
+    width: 214px;
     height:53px; 
     align-items:stretch;
 
@@ -51,12 +54,23 @@ input{
     background-color: #CCCCCC;
     border-color: #CCCCCC;
     font-weight: bolder;
+    outline: none;
+    border-style: solid;
+    font-size:15px;
+    color: #191102
 }
 .operator{
-    background-color: #BBBBBB;
-    border-color: #BBBBBB;
+    background-color: #AAAAAA;
+    border-color: #AAAAAA;
 }
 .action{
     background-color: #AAAAAA;
     border-color: #AAAAAA;
+}
+.equals{
+    background-color: #73E2A7
+}
+.ac{
+    background-color: #8FBCE0;
+    border-color: #8FBCE0;
 }
