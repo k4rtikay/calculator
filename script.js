@@ -20,6 +20,7 @@ numarr.forEach(number=>{
     number.addEventListener('click',()=>{
         if(total!=''){
             show('');
+            total='';
         }
         let val = display.textContent.concat(number.value);
     show(val);
@@ -37,8 +38,6 @@ oparr.forEach(element => {
         else if(currentOperand==''){
             currentOperand=content;
             op=element.value;
-            console.log(currentOperand);
-            console.log(op);
             show('');
         }
         else if(currentOperand!=''){
@@ -57,6 +56,10 @@ oparr.forEach(element => {
 
 
 equals.addEventListener('click',()=>{
+    if(currentOperand==''){
+        show('ERROR!');
+        return;
+    }
     previousOperand=currentOperand;
     currentOperand=display.textContent;
     total = operate(previousOperand,currentOperand,op);
@@ -65,6 +68,16 @@ equals.addEventListener('click',()=>{
     currentOperand='';
     total='';
     op='';
+})
+
+const decimal = document.querySelector('.decimal');
+
+decimal.addEventListener('click',()=>{
+    if(display.textContent.includes('.')) return;
+    else{
+        let val = display.textContent.concat(decimal.value);
+        show(val);
+    }
 })
 
 ac.addEventListener('click',()=>{
@@ -81,33 +94,31 @@ clear.addEventListener('click',()=>{
 })
 
 function operate(num1,num2,operator){
-    console.log(num1)
-    console.log(num2)
     let final;
     if(operator=='+'){
         final = parseFloat(num1) + parseFloat(num2);
-        //final=Math.round((final + Number.EPSILON) * 100) / 100;
         return (final);
     }else if(operator=='-'){
         final = num1-num2;
+        if(final%1!==0){
+            final=final.toFixed(4);
+        }
         return (final);
     }else if(operator=='x'){
         final = num1*num2;
         return (final);
     }else if(operator=='/'){
         if(num2==0){
-            show('DIVISION BY ZERO!!');
-            return;
+            return 'INVALID!';
         }else{
             final = num1/num2;
             final = final.toFixed(5);
-            //final=Math.round((final + Number.EPSILON) * 100) / 100;
+
             return (final);
         }
     }else if(operator=='%'){
         if(num2==0){
-            show('DIVISION BY ZERO!!');
-            return;
+            return 'INVALID!';
         }else{
             final = num1%num2;
             final=Math.round((final + Number.EPSILON) * 100) / 100;

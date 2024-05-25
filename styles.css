@@ -25,7 +25,7 @@
     margin-bottom: 5px;
     background-color: #c1bebe;
     border-color: #DDDDDD;
-    font-size:30px;
+    font-size:28px;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align:right;
@@ -68,7 +68,8 @@ input{
     border-color: #AAAAAA;
 }
 .equals{
-    background-color: #73E2A7
+    background-color: #73E2A7;
+    border-color: #73E2A7;
 }
 .ac{
     background-color: #8FBCE0;
